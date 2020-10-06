@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE таблица PUBLIC "surkovaes" "http://kodaktor.ru/j/dtd_61852">
+<!DOCTYPE таблица PUBLIC "surkovaes" 
+                         "http://kodaktor.ru/j/dtd_c45b5">
 <таблица>
   <студент имя="Иванов">
     <отметка дисциплина="Мультимедиа">3</отметка>
