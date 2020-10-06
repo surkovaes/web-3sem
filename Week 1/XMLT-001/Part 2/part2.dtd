@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!ELEMENT портфолио (заголовочный_блок, блок)>
+<!ELEMENT заголовочный_блок (заголовок, подзаголовок*)>
+<!ELEMENT заголовок (#PCDATA)>
+<!ELEMENT подзаголовок (#PCDATA)>
+<!ELEMENT блок (неделя, перечень)+>
+<!ELEMENT неделя (#PCDATA)>
+<!ELEMENT перечень (задание)+>
+<!ELEMENT задание (#PCDATA)>
