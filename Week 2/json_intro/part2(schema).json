@@ -3,7 +3,7 @@
   "description": "",
   "type": "object",
   "properties": {
-  	"таблица": {
+    "таблица": {
       "type": "object",
       "properties": {
         "студент": {
