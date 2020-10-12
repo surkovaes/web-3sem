@@ -1,2 +1,0 @@
-json -- https://kodaktor.ru/j/myjson_0f07e
-validation -- https://www.jsonschemavalidator.net/s/an2Isu7A
