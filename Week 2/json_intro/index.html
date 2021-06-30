@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>json_intro</title><meta charset="utf-8">
+ </head>
+ <body>
+  <article>
+    <h1>json_intro</h1>
+    <h2>JSON как подъязык JavaScript</h2>
+    <h4>Автор: Елизавета Суркова 2ИВТ(2)</h4>
+	  <a href=https://github.com/surkovaes/web-3sem/tree/master/Week%202/json_intro target="_blank">Ссылка на папку с файлами</a>
+    <h2>Часть I. Перевод с языка XML на язык JSON</h2>
+	  <a href=https://kodaktor.ru/j/myjson_0f07e target="_blank">Ссылка на файл json</a>
+    <h3>Содержимое файла part1(doc).json</h3>
+    <pre><code>  
+	{
+	  "таблица": {
+	    "студент": [ 
+		  {
+		    "имя": "Иванов",
+		    "отметка": {
+			  "дисциплина": [
+			    {"Мультимедиа": 3, 
+			     "Веб-дизайн": 3, 
+			     "Графика": 5}]
+		    }
+		  },
+		  {
+		    "имя": "Петрова",
+		    "отметка": {
+			  "дисциплина": [
+			    {"Мультимедиа": 3, 
+			     "Веб-дизайн": 4, 
+			     "Графика": 5, 
+			     "Логика": 5}]
+		    }
+		  },
+		  {
+		    "имя": "Сидоренко",
+		    "отметка": {
+			  "дисциплина": [
+			    {"Мультимедиа": 3, 
+			     "Веб-дизайн": 4, 
+			     "Графика": 5, 
+			     "Логика": 4}]
+		    }
+		  }
+	    ]
+	  }
+	}
+    </code></pre>
+	  <h2>Часть II. Построение схемы</h2>
+    <h3>Содержимое файла part2(schema).json</h3>
+	  <pre><code> 
+	{
+	  "$schema": "http://json-schema.org/draft-04/schema#",
+	  "description": "",
+	  "type": "object",
+	  "properties": {
+	    "таблица": {
+	      "type": "object",
+	      "properties": {
+	        "студент": {
+	          "type": "array",
+	          "uniqueItems": true,
+	          "minItems": 1,
+	          "properties": {
+	            "имя": {
+	              "type": "string",
+	              "minLength": 1
+	            },
+	            "отметка": {
+	              "type": "object",
+	              "properties": {
+	                "дисциплина": {
+	                  "type": "array",
+	                  "uniqueItems": true,
+	                  "minItems": 1,
+	                  "properties": {
+	                    "Мультимедиа": {
+	                      "type": "number",
+	                      "minimum": 2
+	                    },
+	                    "Веб-дизайн": {
+	                      "type": "number",
+	                      "minimum": 2
+	                    },
+	                    "Графика": {
+	                      "type": "number",
+	                      "minimum": 2
+	                    },
+	                    "Логика": {
+	                      "type": "number",
+	                      "minimum": 2
+	                    }
+	                  }
+	                }
+	              }
+	            }
+	          }
+	        }
+	      }
+	    }
+	  }    
+	}
+    </code></pre>
+	  <h2>Часть III. Валидация</h2>
+	  <h3><a href=https://www.jsonschemavalidator.net/s/an2Isu7A target="_blank">Ссылка на результат валидации</a></h3><br>
+  </article>
+ </body>
+</html>
