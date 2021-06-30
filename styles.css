@@ -23,7 +23,7 @@ body{
 }
 
 .header_bg{
-  background: url("../assets/images/header-background.jpg") no-repeat;
+  background: url("https://surkovaes.github.io/assets/images/web-background.jpg") no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;
