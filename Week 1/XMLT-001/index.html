@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>XMLT-001</title><meta charset="utf-8">
+ </head>
+ <body>
+  <article>
+    <h1>XMLT-001</h1>
+    <h2>Введение в XML</h2>
+    <h4>Автор: Елизавета Суркова 2ИВТ(2)</h4>
+	<a href=https://github.com/surkovaes/web-3sem/tree/master/Week%201/XMLT-001 target="_blank">Ссылка на папки с файлами</a>
+    <h2>Часть I. Рефакторинг</h2>
+    <h3>Содержимое файла part1.dtd</h3>
+    <pre><code>  
+	  &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	  &lt;!ELEMENT таблица (студент)+&gt;
+	  &lt;!ELEMENT студент (отметка)+&gt;
+	  &lt;!ELEMENT отметка (#PCDATA)&gt;
+	  &lt;!ATTLIST студент имя CDATA #REQUIRED&gt;
+	  &lt;!ATTLIST отметка дисциплина CDATA #REQUIRED&gt;
+    </code></pre>
+	<h3>Содержимое файла part1.xml</h3>
+    <pre><code>  
+	  &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	  &lt;!DOCTYPE таблица PUBLIC "surkovaes" 
+	                           "http://kodaktor.ru/j/dtd_c45b5"&gt;
+	  &lt;таблица&gt;
+	    &lt;студент имя="Иванов"&gt;
+	      &lt;отметка дисциплина="Мультимедиа"&gt;3&lt;/отметка&gt;
+	      &lt;отметка дисциплина="Веб-дизайн"&gt;3&lt;/отметка&gt;
+          &lt;отметка дисциплина="Графика"&gt;5&lt;/отметка&gt;
+		&lt;/студент&gt;
+		&lt;студент имя="Петрова"&gt;
+		  &lt;отметка дисциплина="Мультимедиа"&gt;3&lt;/отметка&gt;
+		  &lt;отметка дисциплина="Веб-дизайн"&gt;4&lt;/отметка&gt;
+		  &lt;отметка дисциплина="Графика"&gt;5&lt;/отметка&gt;
+		  &lt;отметка дисциплина="Логика"&gt;5&lt;/отметка&gt;
+	    &lt;/студент&gt;
+		&lt;студент имя="Сидоренко"&gt;
+		  &lt;отметка дисциплина="Мультимедиа"&gt;3&lt;/отметка&gt;
+		  &lt;отметка дисциплина="Веб-дизайн"&gt;4&lt;/отметка&gt;
+		  &lt;отметка дисциплина="Графика"&gt;5&lt;/отметка&gt;
+		  &lt;отметка дисциплина="Логика"&gt;4&lt;/отметка&gt;
+		&lt;/студент&gt;
+	  &lt;/таблица&gt;
+    </code></pre>
+	<h2>Часть II. Создание DTD для своего документа</h2>
+    <h3>Содержимое файла part2.dtd</h3>
+	<pre><code> 
+	  &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	  &lt;!ELEMENT портфолио (заголовочный_блок, блок)&gt;
+	  &lt;!ELEMENT заголовочный_блок (заголовок, подзаголовок*)&gt;
+	  &lt;!ELEMENT заголовок (#PCDATA)&gt;
+	  &lt;!ELEMENT подзаголовок (#PCDATA)&gt;
+	  &lt;!ELEMENT блок (неделя, перечень)+&gt;
+	  &lt;!ELEMENT неделя (#PCDATA)&gt;
+	  &lt;!ELEMENT перечень (задание)+&gt;
+	  &lt;!ELEMENT задание (#PCDATA)&gt;
+    </code></pre>
+	<h3>Содержимое файла part2.xml</h3>
+	<pre><code> 
+	  &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	  &lt;!DOCTYPE портфолио PUBLIC "surkovaes" 
+                                   "http://kodaktor.ru/j/dtd_74c99"&gt;
+	  &lt;портфолио&gt;
+	    &lt;заголовочный_блок&gt;
+		  &lt;заголовок&gt;Веб-проектирование и веб-языки&lt;/заголовок&gt;
+		  &lt;подзаголовок&gt;Елизавета Суркова 2 курс ИВТ(2)&lt;/подзаголовок&gt;
+	    &lt;/заголовочный_блок&gt;
+	    &lt;блок&gt;
+		  &lt;неделя&gt;Неделя 1&lt;/неделя&gt;
+		  &lt;перечень&gt;
+		    &lt;задание&gt;Установка Node&lt;/задание&gt;
+		    &lt;задание&gt;Лабораторная работа 1. Введение в XML&lt;/задание&gt;
+		  &lt;/перечень&gt;
+		  &lt;неделя&gt;Неделя 2&lt;/неделя&gt;
+		  &lt;перечень&gt;
+		    &lt;задание&gt;?&lt;/задание&gt;
+		    &lt;задание&gt;?&lt;/задание&gt;
+		  &lt;/перечень&gt;
+	    &lt;/блок&gt;
+	  &lt;/портфолио&gt;
+    </code></pre>
+  </article>
+ </body>
+</html>
