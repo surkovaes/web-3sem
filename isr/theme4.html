@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>ИСР 4.1</title><meta charset="utf-8">
+ </head>
+ <body>
+  <article>
+    <h1>ИСР Тема 4. Настройка линтера и иных средств мониторинга корректности программного года</h1>
+	<div style="font-size:110%;">
+	Настройка линтера <b>eslint</b> для <b>Visual Studio Code</b>:
+	<ol>
+	  <li>Установка eslint
+	    <pre style="background-color:rgb(240, 240, 240); font-size:120%;"><code>
+        npm install -D eslint
+	    </code></pre>
+	  </li>
+	  <li>Установка плагинов eslint
+	    <pre style="background-color:rgb(240, 240, 240); font-size:120%;"><code>
+        npm install -D eslint-config-airbnb-base eslint-plugin-import
+	    </code></pre>
+	  </li>
+      <li>Создание конфигурационного файла <code>.eslintrc.yml</code>
+	    <pre style="background-color:rgb(240, 240, 240); font-size:120%;"><code>
+        extends:
+          - 'airbnb-base'
+        env:
+          node: true
+          browser: true
+	    </code></pre>
+	  </li>	
+      <li>Установка плагина ESLint<br><br>
+	    <img src="images/4.1.png">
+	  </li>	  
+	</ol>
+	Исправление кода с учётом рекомендаций линтера:<br><br>
+	<img src="images/4.2.png"><br>
+	<img src="images/4.3.png">
+	</div>
+  </article>
+ </body>
+</html>

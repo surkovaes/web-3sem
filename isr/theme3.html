@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>ИСР 3.1</title><meta charset="utf-8">
+ </head>
+ <body>
+  <article>
+    <h1>ИСР Тема 3. Разработка приложения для асинхронного считывания данных из JSON и вывода в веб-документ путём нативной модификации дерева DOM</h1>
+	<div style="font-size:110%;">
+	Данные JSON получены по адресу <a href="https://kodaktor.ru/j/users" target="_blank">https://kodaktor.ru/j/users</a><br><br>
+	Данные считываются с помощью <b>fetch</b>. Модификация дерева DOM происходит путём вызова функции <b>appendChild</b><br>
+	<h3>Код приложения (фрагмент <code>script</code>):</h3>
+	<pre style="background-color:rgb(240, 240, 240); font-size:120%;"><code>
+    document.querySelector('#btn').onclick = async () => {
+      let response = await fetch('https://kodaktor.ru/j/users');
+      data = await response.json();
+      data.users.forEach(user => {
+        let ul = document.querySelector('#users');
+        let li = document.createElement('li');
+        li.appendChild(document.createTextNode(user.login));
+        ul.appendChild(li);
+      });
+    }
+	</code></pre>
+	Скриншот работающего приложения:<br><br>
+	<img src="images/3.png">	
+	</div>
+  </article>
+ </body>
+</html>
